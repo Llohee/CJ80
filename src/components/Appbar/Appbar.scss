@@ -4,6 +4,7 @@ $appbar-bg-color:var(--ds-text,#325694);
 
 
 .navbar-app{
+    height:$navbar-app-height;
     padding-left: $gap;
     display: flex;
     align-items: center;

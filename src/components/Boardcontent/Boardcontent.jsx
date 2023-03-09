@@ -4,6 +4,7 @@ import { isEmpty } from 'lodash'
 
 import Colum from '../Colum/Colum'
 import { mapOder } from '../../ultilities/sorts'
+import { applyDrag } from '../../ultilities/dragDrop';
 
 import { initialData } from '../../actions/initialData'
 
@@ -29,6 +30,12 @@ function Boardcontent() {
 
   const onColumDrop = (dropResult) => {
     console.log(dropResult)
+    let newColums = [...colums]
+    newColums = applyDrag(newColums, dropResult)
+
+    // setColums(newColums)
+    console.log(newColums)
+    console.log(colums)
   }
 
 

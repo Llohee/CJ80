@@ -8,13 +8,15 @@ export const initialData = {
                     id: 'colum-1',
                     boardId: 'board-1',
                     title: 'To do colum',
-                    cardOder: ['card-1', 'card-2', 'card-3', 'card-4', 'card-5'],
+                    cardOder: ['card-1', 'card-2', 'card-3', 'card-4', 'card-5', 'card-6', 'card-7'],
                     cards: [
                         { id: 'card-1', boardId: 'board-1', columId: 'colum-1', title: 'title of card 1', cover: 'https://th.bing.com/th/id/OIP.wSTCfMrxzjhhb3_b-BPxmAHaFV?w=279&h=202&c=7&r=0&o=5&pid=1.7' },
                         { id: 'card-2', boardId: 'board-1', columId: 'colum-1', title: 'title of card 2', cover: null },
                         { id: 'card-3', boardId: 'board-1', columId: 'colum-1', title: 'title of card 3', cover: null },
                         { id: 'card-4', boardId: 'board-1', columId: 'colum-1', title: 'title of card 4', cover: null },
-                        { id: 'card-5', boardId: 'board-1', columId: 'colum-1', title: 'title of card 5', cover: null }
+                        { id: 'card-5', boardId: 'board-1', columId: 'colum-1', title: 'title of card 5', cover: null },
+                        { id: 'card-6', boardId: 'board-1', columId: 'colum-1', title: 'title of card 6', cover: null },
+                        { id: 'card-7', boardId: 'board-1', columId: 'colum-1', title: 'title of card 7', cover: null },
                     ]
                 },
                 {
