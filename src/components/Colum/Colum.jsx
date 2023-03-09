@@ -8,12 +8,9 @@ import './Colum.scss'
 
 
 function Colum(props) {
-  const { colum } = props
+  const { colum, onCardDrop } = props
   const cards = mapOder(colum.cards, colum.cardOder, 'id')
 
-  const onCardDrop = (dropResult) => {
-    console.log(dropResult)
-  }
 
   return (
     <div className="colums">
@@ -22,7 +19,7 @@ function Colum(props) {
         <Container
           orientation="vertical"
           groupName='app-colums'
-          onDrop={onCardDrop}
+          onDrop={dropResult => onCardDrop(colum.id, dropResult)}
           getChildPayload={index => cards[index]}
           dragClass="card-ghost"
           dropClass="card-ghost-drop"
@@ -43,7 +40,11 @@ function Colum(props) {
 
 
       </div>
-      <footer>Add Card</footer>
+      <footer>
+        <div className="footer-actions">
+          < i className="fa fa-plus icon" /> Add Card
+        </div>
+      </footer>
     </div>
 
   )

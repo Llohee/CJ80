@@ -33,10 +33,24 @@ function Boardcontent() {
     let newColums = [...colums]
     newColums = applyDrag(newColums, dropResult)
 
-    // setColums(newColums)
-    console.log(newColums)
-    console.log(colums)
+    let newBoard = { ...board }
+    newBoard.columOder = newColums.map(c => c.id)
+    newBoard.colums = newColums
+    setColums(newColums)
+    setBoard(newBoard)
   }
+  const onCardDrop = (columId, dropResult) => {
+    if (dropResult.removedIndex !== null || dropResult.addedIndex !== null) {
+      let newColums = [...colums]
+
+      let currentColum = newColums.find(c => c.id === columId)
+      currentColum.cards = applyDrag(currentColum.cards, dropResult)
+      currentColum.cardOder = currentColum.cards.map(i => i.id)
+      setColums(newColums)
+      // console.log(dropResult)
+    }
+  }
+
 
 
   return (
@@ -54,11 +68,13 @@ function Boardcontent() {
       >
         {colums.map((colum, index) => (
           <Draggable key={index}>
-            <Colum colum={colum} />
+            <Colum colum={colum} onCardDrop={onCardDrop} />
           </Draggable>
         ))}
       </Container>
-
+      <div className="add-new-colum">
+        < i className="fa fa-plus icon" /> Add new column
+      </div>
     </div>
 
   )
