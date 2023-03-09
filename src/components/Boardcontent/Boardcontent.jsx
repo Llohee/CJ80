@@ -1,34 +1,59 @@
-import React, { useState, useEffect} from 'react'
+import React, { useState, useEffect } from 'react'
+import { Container, Draggable } from 'react-smooth-dnd';
 import { isEmpty } from 'lodash'
 
 import Colum from '../Colum/Colum'
+import { mapOder } from '../../ultilities/sorts'
+
+import { initialData } from '../../actions/initialData'
+
+
 import './Boardcontent.scss'
-import {initialData } from '../../actions/initialData'
+
+
 function Boardcontent() {
-const [board, setBoard] = useState({})
-const [colums, setColums] = useState([])
+  const [board, setBoard] = useState({})
+  const [colums, setColums] = useState([])
 
-useEffect(() => {
+  useEffect(() => {
     const boardFromDB = initialData.boards.find(board => board.id === 'board-1')
-    if (boardFromDB){
+    if (boardFromDB) {
       setBoard(boardFromDB)
-
-      setColums(boardFromDB.colums)
+      setColums(mapOder(boardFromDB.colums, boardFromDB.columOder, 'id'))
     }
-}, [])
+  }, [])
 
-if(isEmpty(board)) {
-  return <div className="not-found">Board not Found</div>
-} 
+  if (isEmpty(board)) {
+    return <div className="not-found">Board not Found</div>
+  }
 
-    return (
-        <div className="board-content">
-          {colums.map((colum, index) =>  {
-            return <Colum />
-          })}
-       
-      </div>
+  const onColumDrop = (dropResult) => {
+    console.log(dropResult)
+  }
 
-    )
+
+  return (
+    <div className="board-content">
+      <Container
+        orientation="horizontal"
+        onDrop={onColumDrop}
+        getChildPayload={index => colums[index]}
+        dragHandleSelector=".colum-drag-handle"
+        dropPlaceholder={{
+          animationDuration: 150,
+          showOnTop: true,
+          className: 'colum-drop-preview'
+        }}
+      >
+        {colums.map((colum, index) => (
+          <Draggable key={index}>
+            <Colum colum={colum} />
+          </Draggable>
+        ))}
+      </Container>
+
+    </div>
+
+  )
 }
 export default Boardcontent

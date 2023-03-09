@@ -18,6 +18,10 @@ $list-bg-color: #b4b4b4;
         background-color: darken($list-bg-color, 15);
         border-bottom: 5px solid $list-bg-color ;
     }
-
+    .colum-drop-preview {
+      background-color: rgba(150, 150, 200, 0.1);
+      border: 1px dashed #abc;
+      margin: 5px 45px 5px 5px;
+    }
     
   }
