@@ -7,7 +7,10 @@ $list-bg-color: #b4b4b4;
     height:$board-content-height;
     overflow-x:auto ;
     overflow-y: hidden;
-
+    &:after{
+      content: '';
+      flex: 0 0 $gap; 
+    }
     &::-webkit-scrollbar{
       -webkit-appearance: none;
     }
@@ -25,6 +28,7 @@ $list-bg-color: #b4b4b4;
     }
     .add-new-colum{
       width: 250px;
+      max-width: 250px;
       height: 32px;
       line-height: 32px;
       padding: 4px 0 4px 15px;
@@ -37,6 +41,29 @@ $list-bg-color: #b4b4b4;
       &:hover{
         background-color: hsla(0, 0%, 100%, .34);
 
+      }
+    }
+    .enter-new-colum{
+      width: 250px;
+      max-width: 250px;
+      background-color: $colum-bg-color;
+      line-height: 32px;
+      padding: 4px 10px;
+      margin-left: $gap;
+      border-radius: $colum-border-radius;
+      input.input-enter-new-colum{
+        margin: 5px 0;
+      }
+      span.cancel-new-colum{
+        margin-left: $gap;
+        cursor: pointer;
+        i{
+          font-size: 18px;
+          color: $alert-danger;
+          &:hover{
+            color: darken($alert-danger, 10);
+          }
+        }
       }
     }
   }
