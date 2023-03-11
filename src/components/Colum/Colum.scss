@@ -6,7 +6,7 @@ $card-border-radius: 5px;
 
 
 
-$colum-height:calc(#{&board-content-height} - #{$gap*2});
+$colum-height:calc(#{$board-content-height} - #{$gap*2});
 
 
 .colums{
@@ -46,7 +46,6 @@ $colum-height:calc(#{&board-content-height} - #{$gap*2});
       }
     }
     .card-list{
-      margin: 0;
       max-height: calc(#{$colum-height} - #{$colum-header-height} - #{$colum-footer-height});
       overflow-y: auto;
       &::-webkit-scrollbar{
@@ -54,9 +53,12 @@ $colum-height:calc(#{&board-content-height} - #{$gap*2});
       }
       &::-webkit-scrollbar:vertical {
           width: 11px;
-      }
-      &::-webkit-scrollbar-thumb{
-          background-color: darken($colum-bg-color, 15);
+          background-color: darken($colum-bg-color, 6);
+          border-right: 5px solid $colum-bg-color ;
+
+        }
+        &::-webkit-scrollbar-thumb{
+          background-color: darken($colum-bg-color, 20);
           border-right: 5px solid $colum-bg-color ;
       }
       .card-ghost {

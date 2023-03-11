@@ -7,6 +7,7 @@ $list-bg-color: #b4b4b4;
     height:$board-content-height;
     overflow-x:auto ;
     overflow-y: hidden;
+    margin:$gap;
     &:after{
       content: '';
       flex: 0 0 $gap; 
@@ -15,11 +16,16 @@ $list-bg-color: #b4b4b4;
       -webkit-appearance: none;
     }
     &::-webkit-scrollbar:horizontal {
-        height: 11px;
-    }
-    &::-webkit-scrollbar-thumb{
-        background-color: darken($list-bg-color, 15);
-        border-bottom: 5px solid $list-bg-color ;
+        height: 15px;
+        background-color: darken($board-bg-color, 5);
+        border-radius: $gap;
+
+      }
+      &::-webkit-scrollbar-thumb{
+        border-radius: $gap;
+        background-color: darken($colum-bg-color, 10);
+
+        // border-bottom: 5px solid $board-bg-color ;
     }
     .colum-drop-preview {
       background-color: rgba(150, 150, 200, 0.1);

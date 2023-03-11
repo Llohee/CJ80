@@ -37,8 +37,6 @@ function Colum(props) {
             </Draggable>
           ))}
         </Container>
-
-
       </div>
       <footer>
         <div className="footer-actions">
