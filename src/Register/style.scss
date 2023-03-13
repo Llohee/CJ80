@@ -4,7 +4,7 @@
     height: 100px;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 40px;
+    margin-top: 10px;
     margin-bottom: 40px;
 }
 .container-wrapper{
@@ -17,6 +17,7 @@
     padding: 25px 40px;
     box-shadow: rgb(0 0 0 / 10%) 0 0 10px;
     align-items: center;
+    margin-top: -20px;
     form {
         .row {
             
@@ -103,6 +104,7 @@
 .btn:hover{
     background-color: #5dea36;
 }
+
 
 
 

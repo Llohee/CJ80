@@ -30,11 +30,11 @@ const Login = () => {
         const findUserLogin = findAllUser.data.find((item) => item.email === user.email)
         if (findUserLogin && findUserLogin.password === user.password) {
             localStorage.setItem('userLogin', JSON.stringify(user));
-            alert('Dang nhap thanh cong')
+            alert('Đăng nhập thành công')
             navigate('/home')
 
         } else {
-            alert('Sai tai khoan hay mat khau')
+            alert('Sai tài khoản hoặc mật khẩu')
         }
     }
   return (
@@ -69,7 +69,7 @@ const Login = () => {
       </div>
       <div className="background">
         <div className="left-background">
-          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR9L3Q-0DIt6pI__4mFdMNhO-VmFLvKPOgKeg&usqp=CAU" alt="" />
+          <img src="https://wallpapercave.com/wp/wp3610522.jpg" alt="backgrounf" />
         </div>
         
       </div>
