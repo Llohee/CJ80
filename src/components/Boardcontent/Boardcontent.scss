@@ -4,24 +4,61 @@ $list-bg-color: #b4b4b4;
 
 .board-content{
     display: flex;
-    margin: 0 $gap $gap;
+    height:$board-content-height;
     overflow-x:auto ;
-
-    // overflow-y: none;
+    overflow-y: hidden;
+    margin:$gap;
+    &:after{
+      content: '';
+      flex: 0 0 $gap; 
+    }
     &::-webkit-scrollbar{
       -webkit-appearance: none;
     }
     &::-webkit-scrollbar:horizontal {
-        height: 11px;
-    }
-    &::-webkit-scrollbar-thumb{
-        background-color: darken($list-bg-color, 15);
-        border-bottom: 5px solid $list-bg-color ;
+        height: 15px;
+        background-color: darken($board-bg-color, 5);
+        border-radius: $gap;
+
+      }
+      &::-webkit-scrollbar-thumb{
+        border-radius: $gap;
+        background-color: darken($colum-bg-color, 10);
+
+        // border-bottom: 5px solid $board-bg-color ;
     }
     .colum-drop-preview {
       background-color: rgba(150, 150, 200, 0.1);
       border: 1px dashed #abc;
       margin: 5px 45px 5px 5px;
     }
-    
+    .add-new-colum{
+      width: 250px;
+      max-width: 250px;
+      height: 46px;
+      line-height: 32px;
+      padding: 8px 0 4px 15px;
+      cursor: pointer;
+      color: #fff;
+      margin-left: $gap;
+      font-size: 15px;
+      background-color: hsla(0, 0%, 100%, .24);
+      border-radius: $colum-border-radius;
+      &:hover{
+        background-color: hsla(0, 0%, 100%, .34);
+
+      }
+    }
+    .enter-new-colum{
+      width: 250px;
+      max-width: 250px;
+      background-color: $colum-bg-color;
+      line-height: 32px;
+      padding: 4px 10px;
+      margin-left: $gap;
+      border-radius: $colum-border-radius;
+      input.input-enter-new-colum{
+        margin: 5px 0;
+      }
+    }
   }
