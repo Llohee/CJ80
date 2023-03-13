@@ -33,11 +33,11 @@ const validation = Yup.object({
         const arrUser = listPrevUser.data;
         const findExitUser = arrUser.findIndex((item) => item.email === user.email);
         if (findExitUser >= 0) {
-            alert('Email da ton tai');
+            alert('Email đã tồn tại');
         } else {
             const requestRegister = await axios.post(`${BACKEND_DOMAIN_API}/api/v1/users`, user)
             if (requestRegister.status === 201) {
-                alert('Dang ky thanh cong');
+                alert('Đăng ký thành công');
                 
             }
         }
@@ -70,7 +70,7 @@ const validation = Yup.object({
                     <button type="submit" className="btn">Đăng ký</button>
                     <ul className="bottom-link">
                         <span className="sign-up" onClick={() =>{
-                            navigate('/login')
+                            navigate('/')
                         }}>Log in </span>
                       
                     </ul>
@@ -81,7 +81,7 @@ const validation = Yup.object({
         </div>
         <div className="background">
             <div className="left-background">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR9L3Q-0DIt6pI__4mFdMNhO-VmFLvKPOgKeg&usqp=CAU" alt="" />
+                <img src="https://wallpapercave.com/wp/wp3610522.jpg" alt="background" />
             </div>
         </div>
     </div>
