@@ -1,6 +1,6 @@
 @import '../../_setting.scss';
 
-$colum-header-height: 36px;
+$colum-header-height: 46px;
 $colum-footer-height: 36px;
 $card-border-radius: 5px;
 
@@ -20,7 +20,7 @@ $colum-height:calc(#{$board-content-height} - #{$gap*2});
       padding: 0 8px ;
     }
     header.colum-drag-handle{
-      padding-left: 15px;
+      padding: 5px 8px;
       height: $colum-header-height ;
       line-height: $colum-header-height;
       font-size: 16px;
@@ -28,10 +28,52 @@ $colum-height:calc(#{$board-content-height} - #{$gap*2});
       border-top-left-radius: $colum-border-radius;
       border-top-right-radius: $colum-border-radius;
       cursor: pointer;
+      display: flex;
+      .colum-title{
+        flex:90%;
+      }
+      .colum-dropdown-action{
+        flex: 10%;
+        .dropdown{
+          button.dropdown-btn{
+            padding: 0 $gap;
+            font-size: 16px;
+            height: 32px;
+            margin-top: -15px;
+            font-weight: bold;
+            letter-spacing: 1px;
+            background-color: $colum-bg-color;
+            border-color: $colum-bg-color;
+            color:$app-main-color;
+            &::after{
+              content: '...';
+              border:none;
+              vertical-align: 1.255em;
+            }
+            &:hover{
+              background-color: darken($colum-bg-color, 10);
+              border-color: darken($colum-bg-color, 10);
+            }
+          }
+        }
+      
+        .dropdown-menu{
+          padding: 0;
+          min-width: 200px;
+          a.dropdown-item{
+            padding: 0.1rem 1rem;
+            font-size: 14px;
+            &:not(:last-child){
+              border-bottom: 1px solid darken($colum-bg-color, 10);
+            }
+          }
+        }
+      }
     }
     footer{
       padding-left: 10px;
       height: $colum-footer-height;
+      min-height: 10px; 
       line-height: $colum-footer-height;
       border-bottom-left-radius: $colum-border-radius;
       border-bottom-right-radius: $colum-border-radius;
@@ -77,6 +119,13 @@ $colum-height:calc(#{$board-content-height} - #{$gap*2});
         background-color: rgba(58, 58, 196, 0.1);
         border: 1px dashed rgb(88, 144, 201);
         margin: 5px;
+      }
+      .add-new-card-area{
+        .textarea-enter-new-card{
+          min-height: 54px;
+          max-height: 162px;
+          margin-bottom: $gap;
+        }
       }
     }
   }  

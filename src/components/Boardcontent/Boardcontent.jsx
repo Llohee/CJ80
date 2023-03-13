@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef, useCallback } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import { Container, Draggable } from 'react-smooth-dnd';
 import { Container as BootstrapContainer, Row, Col, Form, Button } from 'react-bootstrap'
 import { isEmpty } from 'lodash'
@@ -17,10 +17,14 @@ function Boardcontent() {
   const [board, setBoard] = useState({})
   const [colums, setColums] = useState([])
   const [openNewColumForm, setOpenNewColumForm] = useState(false)
+  const toggleOpenNewColumForm = () => {
+    setOpenNewColumForm(!openNewColumForm)
+  }
 
   const newColumInputRef = useRef(null)
+
   const [newColumTitle, setNewColumTitle] = useState('')
-  const onNewColumTitleChange = useCallback((e) => setNewColumTitle(e.target.value), [])
+  const onNewColumTitleChange = (e) => setNewColumTitle(e.target.value)
 
   useEffect(() => {
     const boardFromDB = initialData.boards.find(board => board.id === 'board-1')
@@ -65,15 +69,15 @@ function Boardcontent() {
       // console.log(dropResult)
     }
   }
-  const toggleOpenNewColumForm = () => {
-    setOpenNewColumForm(!openNewColumForm)
-  }
+
 
   const addNewColum = () => {
     if (!newColumTitle) {
       newColumInputRef.current.focus()
       return
     }
+
+
 
     const newColumToAdd = {
       id: Math.random().toString(36).substring(2, 5),
@@ -94,6 +98,28 @@ function Boardcontent() {
     setNewColumTitle('')
     toggleOpenNewColumForm()
   }
+  const onUpdateColumn = (newColumToUpdate) => {
+    const columnIdToUpdate = newColumToUpdate.id
+
+    let newColumns = [...colums]
+    const columnIndexToUpdate = newColumns.findIndex(i => i.id === columnIdToUpdate)
+
+    if (newColumToUpdate._destroy) {
+      //remove column
+      newColumns.splice(columnIndexToUpdate, 1)
+    } else {
+      //update colum info
+      console.log(newColumToUpdate)
+      newColumns.splice(columnIndexToUpdate, 1, newColumToUpdate)
+    }
+    let newBoard = { ...board }
+    newBoard.columOder = newColumns.map(c => c.id)
+    newBoard.colums = newColumns
+
+    setColums(newColumns)
+    setBoard(newBoard)
+
+  }
 
 
   return (
@@ -111,7 +137,11 @@ function Boardcontent() {
       >
         {colums.map((colum, index) => (
           <Draggable key={index}>
-            <Colum colum={colum} onCardDrop={onCardDrop} />
+            <Colum
+              colum={colum}
+              onCardDrop={onCardDrop}
+              onUpdateColumn={onUpdateColumn}
+            />
           </Draggable>
         ))}
       </Container>
@@ -138,9 +168,9 @@ function Boardcontent() {
                 onKeyDown={event => (event.key === 'Enter') && addNewColum()}
               />
               <Button variant="success" size="sm" onClick={addNewColum}>Add column</Button>
-              <span className="cancel-new-colum" onClick={toggleOpenNewColumForm}>
+              <span className="cacel-icon" onClick={toggleOpenNewColumForm}>
                 <i className="fa fa-trash icon" />
-                </span>
+              </span>
             </Col>
           </Row>
         }
