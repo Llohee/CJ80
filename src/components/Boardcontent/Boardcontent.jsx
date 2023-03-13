@@ -109,7 +109,7 @@ function Boardcontent() {
       newColumns.splice(columnIndexToUpdate, 1)
     } else {
       //update colum info
-      console.log(newColumToUpdate)
+      console.log(newColumToUpdate  )
       newColumns.splice(columnIndexToUpdate, 1, newColumToUpdate)
     }
     let newBoard = { ...board }
