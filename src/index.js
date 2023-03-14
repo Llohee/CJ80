@@ -4,12 +4,25 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import 'font-awesome/css/font-awesome.min.css';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import Login from './Login';
+import Register from './Register';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+     <BrowserRouter>
+    <Routes>
+      <Route>
+        <Route path='home' element={<App />}></Route>
+      </Route>
+      <Route>
+        <Route path='' element={<Login />}></Route>
+        <Route path='register' element={<Register />}></Route>
+      </Route>
+    </Routes>
+    </BrowserRouter>
   </React.StrictMode>
 );
 

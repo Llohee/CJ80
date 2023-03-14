@@ -1,0 +1,111 @@
+.trello-logo{
+    display: block;
+    width: 193px;
+    height: 100px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+    margin-bottom: 40px;
+}
+.container-wrapper{
+    max-width: 500px;
+    margin: 0 auto;
+}
+.container-register{
+    background-color: #ffffff;
+    border-radius: 3px;
+    padding: 25px 40px;
+    box-shadow: rgb(0 0 0 / 10%) 0 0 10px;
+    align-items: center;
+    margin-top: -20px;
+    form {
+        .row {
+            
+            margin-bottom: 20px;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            
+
+            input {
+                margin: 0;
+                width: 60%;
+                height: 35px;
+                border: 2px solid #dfe1e6;
+                background-color: #fafbfc;
+                border-radius: 3px;
+                transition: background-color .2s ease-in-out 0s,border-color .2s ease-in-out 0s;
+                font-size: 16px;
+            }
+            
+           
+        }
+        
+    }
+}
+.reds {
+    color: red;
+    text-align: center;
+    font-size: 16px;
+}
+    
+.container-register h1 {
+    text-align: center;
+    color: #5e6c84;
+    font-size: 20px;
+    line-height: 28px;
+    margin-top: 10px;
+    margin-bottom: 25px;
+}
+
+.background{
+    z-index: -900;
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+}
+.left-background{
+    position: absolute;
+    width: 400px;
+    bottom: 0;
+    left: 0;
+    z-index: -999;
+    max-width: 30%;
+}
+.login-btn {
+    text-align: center;
+    margin-bottom: 10px;
+    margin-top: 20px;
+    
+}
+.bottom-link{
+    text-align: center;
+    font-size: 14px;
+    display: block;
+    padding: 0;
+}
+.btn{
+    background-color: #52b536;
+    color: white;
+    border-radius: 3px;
+    border: 1px solid #3f3f40;
+    cursor: pointer;
+}
+.sign-up{
+    color: #0052cc;
+    cursor: pointer;
+}
+.sign-up:hover {
+    text-decoration: underline;
+}
+.btn:hover{
+    background-color: #5dea36;
+}
+
+
+
+
+
