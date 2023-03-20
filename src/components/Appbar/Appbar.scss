@@ -1,13 +1,9 @@
 @import '../../_setting.scss';
-
-$appbar-bg-color:var(--ds-text,#325694);
-
-
 .navbar-app{
-    height: $navbar-app-height;
+    height:calc(#{$navbar-app-height} - #{$gap*2}); 
     padding: 0 $gap;
     display: flex;
-    align-items: center;
+    align-items: center;  
     background-color: $appbar-bg-color;      
     font-size: 30px;
     color: aliceblue;
@@ -20,10 +16,13 @@ $appbar-bg-color:var(--ds-text,#325694);
         width: 100%;
         flex-direction: row;
         align-items: center;
-        div.item{
+        .item{
           padding: 6px 10px;
           background-color: rgba(255, 255, 255, 0.3);
           border-radius: 3px;
+          border:none;
+          background-color: $appbar-bg-color;
+          color:white;
           &:not(:first-child) {
             margin-left: 4px;
           }
@@ -31,14 +30,12 @@ $appbar-bg-color:var(--ds-text,#325694);
             cursor: pointer;
             background-color: rgba(255, 255, 255, 0.4);
           }
-          &.home{
-            i {
-              font-size: 15px;
-            }
-          }
           &.search {
             padding: 6px 0;
+            color:white;
+            background-color: rgba(255, 255, 255, 0.4);
             .group-search {
+
               height: 19px;
               .input-search{
                 max-height: 100%;
@@ -93,10 +90,13 @@ $appbar-bg-color:var(--ds-text,#325694);
         flex-direction: row;
         align-items: center;
         justify-content: flex-end;
-        div.item {
+        
+        button.item {
           padding: 6px 10px;
-          background-color: rgba(255, 255, 255, 0.3);
+          background-color: $appbar-bg-color;
           border-radius: 3px;
+          color:white;
+          border:none;
           &:not(:first-child){
             margin-left: 4px;
           }
@@ -105,9 +105,15 @@ $appbar-bg-color:var(--ds-text,#325694);
             background-color: rgba(255, 255, 255, 0.4);
 
           }
-          &user-avatar {
+          &.user-avatar {
             padding: 0;
             background-color: transparent;
+            padding:5px;
+            border-radius: 50%;
+            &:hover{
+            background-color: rgba(255, 255, 255, 0.4);
+
+            }
             img {
               width: 30px;
               height: 30px;
