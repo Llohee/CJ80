@@ -1,0 +1,61 @@
+@import '../../../_setting.scss';
+
+.sidebar-bar{
+  display: flex; 
+  height: 100vh; 
+  overflow: scroll initial; 
+  z-index: 0;
+  .cd-sidebar{
+    background-color: #172b4dcf ;
+    .cdsidebar-footer{
+        text-align: center;
+        p{
+          padding: 10px;
+          width: 100%;
+          border-bottom: 1px solid #ffffff5c;
+          margin-top: 30px;
+        }
+        .board-calender{
+          margin: $gap 5px 0  5px;
+          border-radius: $gap;
+          button{
+            margin-top: 10px;
+            border-radius: $gap;
+            width: 100%;
+            padding: 10px;
+            background-color: #172b4d2f;
+            color: white;
+            border: none;
+            &:hover{
+              background-color: #172b4dcf;
+            }
+          }
+        }
+        .board-calender-tables{
+          margin: $gap 5px 0  5px;
+          border-radius: $gap;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          
+          button{
+            display: flex;
+            justify-content: space-around;
+            margin-top: 10px;
+            border-radius: $gap;
+            width: 100%;
+            padding: 10px;
+            background-color: #172b4dcf;
+            color: white;
+            border: none;
+            .theme{
+              width: 40px;
+              height: 30px;
+              border-radius: $gap;
+              background-color: darken($board-bg-color, 5);
+            }
+          }
+        }
+    }
+  }
+}

@@ -1,4 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react'
+
+
 import { Container, Draggable } from 'react-smooth-dnd';
 import { Container as BootstrapContainer, Row, Col, Form, Button } from 'react-bootstrap'
 import { isEmpty } from 'lodash'
@@ -8,8 +10,7 @@ import { mapOder } from '../../ultilities/sorts'
 import { applyDrag } from '../../ultilities/dragDrop';
 
 import { initialData } from '../../actions/initialData'
-
-
+import Sidebar from './Sidebar/Sidebar';
 import './Boardcontent.scss'
 
 
@@ -124,7 +125,9 @@ function Boardcontent() {
 
   return (
     <div className="board-content">
-      
+      <div className="sidebar">
+        <Sidebar />
+      </div>
       <Container
         orientation="horizontal"
         onDrop={onColumDrop}

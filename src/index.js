@@ -3,25 +3,33 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import '../node_modules/font-awesome/css/font-awesome.min.css'; 
+import '../node_modules/font-awesome/css/font-awesome.min.css';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Login from './Login';
 import Register from './Register';
+import Boardcontent from './components/Boardcontent/Boardcontent';
+import Calendar from './components/Calendar/Calendar';
+import Appbar from './components/Appbar/Appbar';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-     <BrowserRouter>
-    <Routes>
-      <Route>
-        <Route path='home' element={<App />}></Route>
-      </Route>
-      <Route>
-        <Route path='' element={<Login />}></Route>
-        <Route path='register' element={<Register />}></Route>
-      </Route>
-    </Routes>
+    <BrowserRouter>
+      <Routes>
+        <Route>
+          <Route path='home' element={<App />}>
+            <Route path='boards' element={< Boardcontent />}></Route>
+            <Route path='calendar' element={< Calendar />}></Route>
+          </Route>
+          {/* <Route path='home' element={<Calender />}>
+          </Route> */}
+        </Route>
+        <Route>
+          <Route path='' element={<Login />}></Route>
+          <Route path='register' element={<Register />}></Route>
+        </Route>
+      </Routes>
     </BrowserRouter>
   </React.StrictMode>
 );
