@@ -62,7 +62,7 @@ function Appbar() {
                                 </NavDropdown.Item>
                                 <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
                                 <NavDropdown.Divider />
-                                <NavDropdown.Item onClick={() => navigate('/login')}>
+                                <NavDropdown.Item onClick={() => navigate('/')}>
                                     Log Out
                                     <BiLogOut />
                                 </NavDropdown.Item>

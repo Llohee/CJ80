@@ -30,7 +30,6 @@ const Login = () => {
         const findUserLogin = findAllUser.data.find((item) => item.email === user.email)
         if (findUserLogin && findUserLogin.password === user.password) {
             localStorage.setItem('userLogin', JSON.stringify(user));
-            alert('Đăng nhập thành công')
             navigate('/home')
 
         } else {

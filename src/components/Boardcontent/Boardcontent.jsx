@@ -124,6 +124,7 @@ function Boardcontent() {
 
   return (
     <div className="board-content">
+      
       <Container
         orientation="horizontal"
         onDrop={onColumDrop}
