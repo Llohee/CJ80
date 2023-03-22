@@ -41,7 +41,19 @@ export const initialData = {
                         { id: 'card-11', boardId: 'board-1', columId: 'colum-1', title: 'title of card 11', cover: null },
                     ]
 
-                }
+                },
+                {
+                    id: 'colum-4',
+                    boardId: 'board-1',
+                    title: 'Giang',
+                    cardOder: ['card-12', 'card-13', 'card-14',],
+                    cards: [
+                        { id: 'card-12', boardId: 'board-1', columId: 'colum-1', title: 'title of card 12', cover: null },
+                        { id: 'card-13', boardId: 'board-1', columId: 'colum-1', title: 'title of card 13', cover: null },
+                        { id: 'card-14', boardId: 'board-1', columId: 'colum-1', title: 'title of card 14', cover: null },
+                    ]
+
+                },
 
             ]
         }

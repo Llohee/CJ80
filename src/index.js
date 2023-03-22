@@ -9,29 +9,33 @@ import Login from './Login';
 import Register from './Register';
 import Boardcontent from './components/Boardcontent/Boardcontent';
 import Calendar from './components/Calendar/Calendar';
-import Appbar from './components/Appbar/Appbar';
+import { MainLayout } from './components/layout/main';
+import LayoutAuth from './components/layout/auth';
+import Cal from './components/layout/calendar';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
-    <BrowserRouter>
-      <Routes>
-        <Route>
+  <BrowserRouter>
+    <Routes>
+      <Route>
+        <Route path='/' element={<MainLayout />} >
           <Route path='home' element={<App />}>
             <Route path='boards' element={< Boardcontent />}></Route>
-            <Route path='calendar' element={< Calendar />}></Route>
+            {/* <Route path='calendar' element={<Calendar />}></Route> */}
           </Route>
-          {/* <Route path='home' element={<Calender />}>
-          </Route> */}
+          <Route path='home' element={<Calendar />}>
+            {/* <Route path='boards' element={< Boardcontent />}></Route> */}
+            <Route path='calendar' element={<Calendar />}></Route>
+          </Route>
         </Route>
-        <Route>
-          <Route path='' element={<Login />}></Route>
-          <Route path='register' element={<Register />}></Route>
-        </Route>
-      </Routes>
-    </BrowserRouter>
-  </React.StrictMode>
+      </Route>
+      <Route path='/auth' element={<LayoutAuth />}>
+        <Route path='login' element={<Login />}></Route>
+        <Route path='register' element={<Register />}></Route>
+      </Route>
+    </Routes>
+  </BrowserRouter>  
 );
 
 // If you want to start measuring performance in your app, pass a function

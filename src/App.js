@@ -8,11 +8,9 @@ import Calendar from './components/Calendar/Calendar';
 function App() {
   return (
     <div className="App">
-      
         <Appbar />
         <Boardbar />
         <Boardcontent />
-        <Calendar />
     </div>
   );
 }

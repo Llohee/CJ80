@@ -19,7 +19,7 @@ const Sidebar = () => {
         <CDBSidebarHeader prefix={<i className="fa fa-bars fa-large"></i>}>
         </CDBSidebarHeader>
         <CDBSidebarFooter className="cdsidebar-footer">
-          <p> Workspace </p>
+          <div className="sidebar-title"> Workspace </div>
           <div className="board-calender">
             <button type="button" value='Boards' onClick={() => {
               navigate('/home/boards');
@@ -28,7 +28,7 @@ const Sidebar = () => {
               navigate('/home/calendar');
             }} >Calendar</button>
           </div>
-          <p> Your tables  </p>
+          <div className="sidebar-title"> Your tables </div>
           <div className="board-calender-tables">
           
             <button type="button" value='Boards' onClick={() => {

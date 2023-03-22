@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 import './Appbar.scss'
 import { Container as BootstrapContainer, Row, Col, InputGroup, FormControl, Nav, NavDropdown } from 'react-bootstrap'
-import Navbar from '../Navbar/navbar'
 import { BsFillMenuButtonWideFill } from 'react-icons/bs'
 import { BiLogOut } from 'react-icons/bi'
 import { useNavigate } from 'react-router-dom'
@@ -15,7 +14,16 @@ function Appbar() {
                 <Row>
                     <Col sm={5} xs={12} className="col-no-padding">
                         <div className="app-actions">
-
+                            <button className="item home"><i className="fa fa-home" /></button>
+                            <div className="item search">
+                                <InputGroup className="group-search">
+                                    <FormControl
+                                        className="input-search"
+                                        placeholder="Jump to..."
+                                    />
+                                    <InputGroup.Text className="input-icon-search"><i className="fa fa-search" /></InputGroup.Text>
+                                </InputGroup>
+                            </div>
                             <NavDropdown
                                 id="basic-nav-dropdown"
                                 title={<div><BsFillMenuButtonWideFill /></div>}
@@ -30,16 +38,6 @@ function Appbar() {
                                     Separated link
                                 </NavDropdown.Item>
                             </NavDropdown>
-                            <button className="item home"><i className="fa fa-home" /></button>
-                            <div className="item search">
-                                <InputGroup className="group-search">
-                                    <FormControl
-                                        className="input-search"
-                                        placeholder="Jump to..."
-                                    />
-                                    <InputGroup.Text className="input-icon-search"><i className="fa fa-search" /></InputGroup.Text>
-                                </InputGroup>
-                            </div>
                         </div>
                     </Col>
                     <Col sm={2} xs={12} className="col-no-padding">
