@@ -1,0 +1,12 @@
+.month-content{
+  width: 70%;
+  height:100vh;
+  .month{
+    display: grid; 
+    flex: 1 1 0%; 
+    grid-template-columns: repeat(7, minmax(0, 1fr)); 
+    grid-template-rows: repeat(5, minmax(0, 1fr)); 
+    color: rgba(255, 255, 255, 0.62);
+  }
+
+}

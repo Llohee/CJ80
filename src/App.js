@@ -3,7 +3,7 @@ import React from 'react'
 import Appbar from './components/Appbar/Appbar';
 import Boardbar from './components/Boardbar/Boardbar';
 import Boardcontent from './components/Boardcontent/Boardcontent';
-import Calendar from './components/Calendar/Calendar';
+import Calendar from './Calendar/Calendar';
 
 function App() {
   return (

@@ -1,0 +1,23 @@
+.label {
+  margin-top: 2.5rem;
+  color: #6B7280;
+  font-weight: 700;
+}
+
+.items {
+  display: block;
+  margin-top: 0.75rem;
+  align-items: center;
+  input{
+    width: 1.25rem; 
+    height: 1.25rem; 
+    border-radius: 0.25rem; 
+    cursor: pointer; 
+  }
+  .indigo {
+      margin-left: 0.5rem;
+      color: #374151;
+      text-transform: capitalize;
+      
+  }
+}
