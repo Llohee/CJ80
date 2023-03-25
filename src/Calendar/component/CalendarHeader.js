@@ -47,7 +47,7 @@ export default function CalendarHeader() {
         <span className="left-right">
           <GrFormNext
             color="black"
-            size="24px"
+            size="20px"
           />
         </span>
       </button>
