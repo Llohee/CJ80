@@ -35,6 +35,6 @@
     }
     &::-webkit-scrollbar-thumb{
       border-radius: $gap;
-      background-color: darken($colum-bg-color, 10);
+      background-color: darken($column-bg-color, 10);
   }
 }

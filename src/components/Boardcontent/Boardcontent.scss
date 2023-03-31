@@ -23,18 +23,18 @@ $list-bg-color: #b4b4b4;
       }
       &::-webkit-scrollbar-thumb{
         border-radius: $gap;
-        background-color: darken($colum-bg-color, 10);
+        background-color: darken($column-bg-color, 10);
 
         // border-bottom: 5px solid $board-bg-color ;
     }
     .sidebar{
     }
-    .colum-drop-preview {
+    .column-drop-preview {
       background-color: rgba(150, 150, 200, 0.1);
       border: 1px dashed #abc;
       margin: 5px 45px 5px 5px;
     }
-    .add-new-colum{
+    .add-new-column{
       width: 250px;
       max-width: 250px;
       height: 46px;
@@ -46,21 +46,21 @@ $list-bg-color: #b4b4b4;
       margin-left: $gap;
       font-size: 15px;
       background-color: hsla(0, 0%, 100%, .24);
-      border-radius: $colum-border-radius;
+      border-radius: $column-border-radius;
       &:hover{
         background-color: hsla(0, 0%, 100%, .34);
 
       }
     }
-    .enter-new-colum{
+    .enter-new-column{
       width: 250px;
       max-width: 250px;
-      background-color: $colum-bg-color;
+      background-color: $column-bg-color;
       line-height: 32px;
       padding: 4px 10px;
       margin-left: $gap;
-      border-radius: $colum-border-radius;
-      input.input-enter-new-colum{
+      border-radius: $column-border-radius;
+      input.input-enter-new-column{
         margin: 5px 0;
       }
     }
